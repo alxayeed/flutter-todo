@@ -25,15 +25,15 @@ class _TodoAppState extends State<TodoApp> {
   List<String> todos = [];
   String input = "";
 
-  @override
-  void initState() {
-    super.initState();
-    todos.add("Task 1");
-    todos.add("Task 2");
-    todos.add("Task 3");
-    todos.add("Task 4");
-    todos.add("Task 5");
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   todos.add("Task 1");
+  //   todos.add("Task 2");
+  //   todos.add("Task 3");
+  //   todos.add("Task 4");
+  //   todos.add("Task 5");
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class _TodoAppState extends State<TodoApp> {
           itemCount: todos.length,
           itemBuilder: (BuildContext context, int index) {
             return Dismissible(
-              key: UniqueKey(),
+              key: Key(todos[index]),
               child: Card(
                 elevation: 3,
                 margin: const EdgeInsets.all(10),
@@ -79,6 +79,14 @@ class _TodoAppState extends State<TodoApp> {
                     borderRadius: BorderRadius.circular(5)),
                 child: ListTile(
                   title: Text(todos[index]),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete, color: Colors.red),
+                    onPressed: () {
+                      setState(() {
+                        todos.removeAt(index);
+                      });
+                    },
+                  ),
                 ),
               ),
             );
