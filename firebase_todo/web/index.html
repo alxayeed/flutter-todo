@@ -33,6 +33,40 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <!-- for firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  
+<script>
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyAioLrv7pDdOYIXtAesTp_cDWOE3LuUeHQ",
+
+  authDomain: "flutter-todo-e4cfc.firebaseapp.com",
+
+  projectId: "flutter-todo-e4cfc",
+
+  storageBucket: "flutter-todo-e4cfc.appspot.com",
+
+  messagingSenderId: "925128181677",
+
+  appId: "1:925128181677:web:2a0b317e4518d5b4db4324",
+
+  measurementId: "G-V8815C97Y3"
+
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+  </script>
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;

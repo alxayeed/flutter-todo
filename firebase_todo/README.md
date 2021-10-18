@@ -1,16 +1,40 @@
-# firebase_todo
+# Flutter todo
 
-A new Flutter project.
+### A small todo app built with flutter.
 
-## Getting Started
+<hr>
 
-This project is a starting point for a Flutter application.
+## Demo
 
-A few resources to get you started if this is your first Flutter project:
+<table>
+  <tr>
+    <td>Add task</td>
+  </tr>
+  <tr>
+    <td><img src="img/add.png" width="100%" height="100%" /></td>
+  </tr>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+   <tr>
+    <td>Task list</td>
+  </tr>
+  <tr>
+    <td><img src="img/list.png" width="100%" height="70%" /></td>
+  </tr>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ </table>
+<br/><hr><br/>
+
+## Stacks
+
+<br/>
+
+- Flutter
+
+<br/><hr><br/>
+
+## Features
+
+```
+1. Add item
+2. Delete item
+```
