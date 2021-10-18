@@ -10,6 +10,7 @@ void main() {
           ColorScheme.fromSwatch().copyWith(secondary: Colors.orangeAccent),
     ),
     home: const TodoApp(),
+    title: "Flutter todo",
   ));
 }
 
@@ -22,6 +23,7 @@ class TodoApp extends StatefulWidget {
 
 class _TodoAppState extends State<TodoApp> {
   List<String> todos = [];
+  String input = "";
 
   @override
   void initState() {
@@ -39,6 +41,32 @@ class _TodoAppState extends State<TodoApp> {
         appBar: AppBar(
           title: const Text("My todo"),
         ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text("Add task"),
+                      content: TextField(
+                        onChanged: (String value) {
+                          input = value;
+                        },
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context, rootNavigator: true).pop();
+                              setState(() {
+                                todos.add(input);
+                              });
+                            },
+                            child: const Text("Add"))
+                      ],
+                    );
+                  });
+            },
+            child: const Icon(Icons.add, color: Colors.white)),
         body: ListView.builder(
           itemCount: todos.length,
           itemBuilder: (BuildContext context, int index) {
