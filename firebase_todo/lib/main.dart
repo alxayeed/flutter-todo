@@ -47,6 +47,8 @@ class _TodoAppState extends State<TodoApp> {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
                       title: const Text("Add task"),
                       content: TextField(
                         onChanged: (String value) {
