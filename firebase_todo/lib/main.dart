@@ -56,10 +56,10 @@ class _TodoAppState extends State<TodoApp> {
                       actions: <Widget>[
                         TextButton(
                             onPressed: () {
-                              Navigator.of(context, rootNavigator: true).pop();
                               setState(() {
                                 todos.add(input);
                               });
+                              Navigator.of(context, rootNavigator: true).pop();
                             },
                             child: const Text("Add"))
                       ],
@@ -71,8 +71,12 @@ class _TodoAppState extends State<TodoApp> {
           itemCount: todos.length,
           itemBuilder: (BuildContext context, int index) {
             return Dismissible(
-              key: Key(todos[index]),
+              key: UniqueKey(),
               child: Card(
+                elevation: 3,
+                margin: const EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
                 child: ListTile(
                   title: Text(todos[index]),
                 ),
